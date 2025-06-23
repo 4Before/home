@@ -1,5 +1,5 @@
 <script>
-    let text = '';
+    export let text = '';
     let accumulatedScroll = 0;
     import { onMount } from 'svelte';
     import { gsap } from 'gsap';
@@ -19,4 +19,6 @@
     });
 </script>
 
-<h1>{text}</h1>
+<div class="info">
+    <h1>{text}</h1>
+</div>
