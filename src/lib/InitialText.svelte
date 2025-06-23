@@ -1,11 +1,12 @@
 <script>
     export let text = '';
     let accumulatedScroll = 0;
+    let slotElement;
     import { onMount } from 'svelte';
     import { gsap } from 'gsap';
-    let slotElement;
 
     onMount(() => {
+        slotElement = document.querySelectorAll('.texto');
         window.addEventListener('wheel', (e) => {
             accumulatedScroll += e.deltaY;
             console.log(accumulatedScroll)
@@ -19,6 +20,4 @@
     });
 </script>
 
-<div class="info">
-    <h1>{text}</h1>
-</div>
+    <h1 class="texto">{text}</h1>
