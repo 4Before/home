@@ -1,15 +1,11 @@
 export function stepSystem() {
-
-  console.log('connected');
   if (typeof window !== 'undefined') {
-    console.log('window found!');
 
     const container = document.querySelector('.container') as HTMLElement | null;
 
     // STEP = PASSO, ETAPA QUE A VISÃO GERAL ESTÁ VISUALIZANDO
     // SUBSTEP = SUBPASSO, ETAPA ESPECÍFICA DE CONTEÚDO SENDO MOSTRADO
     // TITLE = TÍTULO PRA FICAR MAIS FACIL DE ENTENDER
-    // CONTENT = NOME DA PÁGINA .SVELTE NA PASTA CONTENTS
     // SUBSTEPS = QUANTIDADE DE SUBSTEPS
 
     // PARA CLASSES:
@@ -26,29 +22,24 @@ export function stepSystem() {
 
     interface StepConfig {
       title: string;
-      content: string;
       substeps: number;
     }
 
     const stepConfig: StepConfig[] = [
       {
         title: "Fading",
-        content: 'Initial',
         substeps: 3,
       },
       {
         title: "Rotating",
-        content: 'Competences',
         substeps: 4,
       },
       {
         title: "Cards",
-        content: 'Participants',
         substeps: 2,
       },
       {
         title: "GoTo",
-        content: 'About',
         substeps: 0,
       }
     ];
@@ -61,18 +52,24 @@ export function stepSystem() {
       let currentSubstep = 0;
       const maxSubstep = stepConfig[currentStep].substeps - 1;
       let accumulatedScroll = 0;
-      let treshold = 90;
+      let treshold = 270;
 
 
       container.addEventListener('wheel', (e: WheelEvent) => {
         accumulatedScroll += e.deltaY;
-        console.log('scroll!')
 
         // Função para atualizar step e substep ao subir/descer
         function updateStep(direction: 1 | -1) {
-          console.log('caught direction')
+          console.log('direction: ' + direction);
+          console.log('step: ' + currentStep);
+          console.log('substep: ' + currentSubstep);
+            if (container !== null) {
+            container.className = 'container step-' + currentStep;
+            console.log(container.className);
+            }
           if (direction === 1) { // descendo
             if (currentSubstep < maxSubstep) {
+            
               currentSubstep++;
             } else if (currentStep < maxStep) {
               currentStep++;
@@ -89,11 +86,15 @@ export function stepSystem() {
         }
 
         if (accumulatedScroll > treshold) {
+          console.log('should reset scroll');
           updateStep(1);
           accumulatedScroll = 0;
+          console.log(accumulatedScroll);
         } else if (accumulatedScroll < -treshold) {
+          console.log('should reset scroll');
           updateStep(-1);
           accumulatedScroll = 0;
+          console.log(accumulatedScroll);
         }
       });
     }

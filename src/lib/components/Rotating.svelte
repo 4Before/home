@@ -1,6 +1,6 @@
 <div class="textogirando">
     <!-- Imagem Logo -->
-    <img src="/logo-branca.png" />
+    <img src="/logo-branca.png" alt="Nossa logo"/>
     
     <svg viewBox="0 0 500 500">
 
