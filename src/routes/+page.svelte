@@ -1,6 +1,6 @@
 <div class="textogirando">
     <!-- Imagem Logo -->
-    <img src="https://img.freepik.com/fotos-premium/tipografia-em-estilo-isometrico-de-meio-tom-3d-numero-4-png_53876-950460.jpg?semt=ais_hybrid&w=740" />
+    <img src="/logo-branca.png" />
     
     <svg viewBox="0 0 500 500">
 
@@ -20,12 +20,13 @@
 
 <style>
     img {
-        width: 200px;
-        height: 200px;
+        width: 400px;
+        height: 400px;
+        margin-right: 10px;
         position: absolute;
     }
     text {
-        fill: #000000;
+        fill: #ffffff;
         font-size: 30.5px;
         letter-spacing: 2.5px;
     }
