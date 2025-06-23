@@ -5,7 +5,7 @@
 </script>
 
 <div class="card">
-    <img src={image} alt="Foto do {name}" />
+    <img src={image} alt="Foto de {name}" />
     <div class="info">
         <h4>{name}</h4>
         <p>{description}</p>

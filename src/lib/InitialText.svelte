@@ -1,10 +1,8 @@
-<h1><slot></slot></h1>
-
 <script>
+    let text = '';
     let accumulatedScroll = 0;
     import { onMount } from 'svelte';
     import { gsap } from 'gsap';
-    let visible = true;
     let slotElement;
 
     onMount(() => {
@@ -20,3 +18,5 @@
         });
     });
 </script>
+
+<h1>{text}</h1>
