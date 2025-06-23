@@ -1,4 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: grey;
     overflow: hidden;
+}
+
+/* todos conteúdos começam escondidos */
+/* .container {
+    display: none;
+} */
+
+
+/* o ativo fica visível */
+.container .active {
+    display: block;
 }

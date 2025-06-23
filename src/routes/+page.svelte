@@ -8,7 +8,7 @@
         stepSystem();
     })
 </script>
-<div class="container step-0">
+<div class="container active step-0">
     <Initial></Initial>
 </div>
 <div class="container step-1">

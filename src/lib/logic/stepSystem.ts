@@ -63,10 +63,15 @@ export function stepSystem() {
           console.log('direction: ' + direction);
           console.log('step: ' + currentStep);
           console.log('substep: ' + currentSubstep);
-            if (container !== null) {
-            container.className = 'container step-' + currentStep;
-            console.log(container.className);
-            }
+            // Remove 'active' class from all step containers
+            const stepContainers = document.querySelectorAll('.container');
+            stepContainers.forEach((el, idx) => {
+              if (idx === currentStep) {
+                el.classList.add('active');
+              } else {
+                el.classList.remove('active');
+              }
+            });
           if (direction === 1) { // descendo
             if (currentSubstep < maxSubstep) {
             
